@@ -20,17 +20,17 @@ public class ShapeList implements Printable {
     }
     
     public String getShapesTable() {
-        String horizontalLineUp = "/" + "-".repeat(135) + "\\" + "\n";
-        String heading = String.format("| %-5s | %-20s | %-30s | %-15s | %-15s | %-10s | %-20s |", "idx", "Class",
+        String horizontalLineUp = " /" + "-".repeat(135) + "\\" + "\n";
+        String heading = String.format(" | %-5s | %-20s | %-30s | %-15s | %-15s | %-10s | %-20s |", "idx", "Class",
                         "toString", "Perimeter", "Formula", "Area", "Formula") + "\n";
-        String middleLine = String.format("| " + "-".repeat(5) + " | " + "-".repeat(20) + " | " + "-".repeat(30) + " | " +
+        String middleLine = String.format(" | " + "-".repeat(5) + " | " + "-".repeat(20) + " | " + "-".repeat(30) + " | " +
                             "-".repeat(15) + " | " + "-".repeat(15) + " | " + "-".repeat(10) + " | " + "-".repeat(20) + " |") + "\n";
-        String horizontalLineDown = "\\" + "-".repeat(135) + "/" + "\n";
+        String horizontalLineDown = " \\" + "-".repeat(135) + "/" + "\n";
         
         String tableString = horizontalLineUp + heading + middleLine;
         for (int index = 0; index < shapes.size(); index++) {
             Shape myShape = shapes.get(index);
-            String shapeToString = String.format("| %-5s | %-20s | %-30s | %-15.2f | %-15s | %-10.2f | %-20s |", 
+            String shapeToString = String.format(" | %-5s | %-20s | %-30s | %-15.2f | %-15s | %-10.2f | %-20s |", 
                                    index, myShape.getName(), myShape.toString(), myShape.calculatePerimeter(), 
                                    myShape.getPerimeterFormula(), myShape.calculateArea(), myShape.getAreaFormula()) + "\n";
             tableString = (index == 0) ? (tableString + shapeToString) : (tableString + middleLine + shapeToString);
@@ -65,11 +65,14 @@ public class ShapeList implements Printable {
     }
 
     public void printTable() {
-
+        System.out.println(" ".repeat(63) + "YOUR SHAPES: \n");
+        System.out.println(getShapesTable());
     }
 
-    public void printList() {
-
+    public void printShape(String message, Shape shape) {
+        System.out.printf(" %s", message);
+        System.out.printf(" %s, perimeter: %.3f, area: %.3f.", shape.toString(), shape.calculatePerimeter(), shape.calculateArea());
+        // obsługa braku shape'ów
     } 
 
 }

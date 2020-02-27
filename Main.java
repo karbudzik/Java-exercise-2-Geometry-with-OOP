@@ -5,12 +5,13 @@ import geometry.shapes.Shape;
 import geometry.shapes.Circle;
 import geometry.shapes.EquilateralTriangle;
 import geometry.shapes.Rectangle;
+import geometry.view.View;
 
 public class Main {
-
+    public static View myView;
     public static void main(String[] args) {
-	    
-	    // boolean isRunning = true;
+	    boolean isRunning = true;
+        myView = new View();
         ShapeList myShapeList = new ShapeList();
 
         Shape circle = new Circle(5);
@@ -21,31 +22,29 @@ public class Main {
         myShapeList.addShape(rectangle);
         myShapeList.addShape(equilateralTriangle);
 
-        System.out.println(myShapeList.getShapesTable());
-	    // while (isRunning) {
-	    //     int option = 0; // TODO: get option from user
+        myView.printMainMenu();
+	    while (isRunning) {
+	        int option = myView.getIntInput("Your choice: ");
 
-        //     switch (option) {
-        //         case 1:
-        //             // Add new shape
-        //             break;
-        //         case 2:
-        //             // Show all shapes
-        //             break;
-        //         case 3:
-        //             // Show shape with the largest perimeter
-        //             break;
-        //         case 4:
-        //             // Show shape with the largest area
-        //             break;
-        //         case 5:
-        //             // Show formulas
-        //             break;
-        //         case 0:
-        //             isRunning = false;
-        //             break;
-
-        //     }
-        // }
+            switch (option) {
+                case 1:
+                    // Add new shape
+                    break;
+                case 2:
+                    myShapeList.printTable();
+                    break;
+                case 3:
+                    myShapeList.printShape("Shape with biggest perimeter:", myShapeList.getLargestShapeByPerimeter());
+                    break;
+                case 4:
+                    myShapeList.printShape("Shape with biggest perimeter:", myShapeList.getLargestShapeByArea());
+                    break;
+                case 5:
+                    // Show formulas
+                    break;
+                case 0:
+                    isRunning = false;
+            }
+        }
     }
 }

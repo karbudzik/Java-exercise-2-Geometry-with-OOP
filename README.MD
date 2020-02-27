@@ -1,55 +1,5 @@
-<!-- # The story
-Do you love geometry? Our young friend Zigy (Zygfryd) loves it too. Unfortunately it's one-sided love. He's studying hard for his high-school exam, but with minor success. You've got to help him!
-
-But how?
-
-You'll write an Object Oriented Java Application to teach him geometry. Don't worry! Our Finnish software architect Linus Coolvalds has already created a boilerplate for you. However he forgot to create a UML class diagram. You have to do it for him.
-
-
-# Requirements -->
-In order to help Zigy you have to:
-- [ ] Implement all classes in `shapes` and `containers` packages
-- [ ] Implement `Main` class.
-- [ ] You are allowed to implement your own classes. Remember about clean code.
-- [ ] Explain why Linus designed some methods to be static methods instead of instance methods.
-- [ ] All tests must pass.
-- [ ] Add UML.png file containing UML class diagram of classes from `shapes` and `containers` packages
-- [ ] Focus most on the OOP not the ui.
-
-# Specifications
-Here you can find information what you have to implement.
-
-## Main.java
-This is the main entrance of the program.   
-The program allows user to create and add shapes to a list and do some things with it.
-
-Running `Main` should show this menu:
-~~~
-Learn Geometry.
-  What do you want to do?
-  (1) Add new shape
-  (2) Show all shapes
-  (3) Show shape with the largest perimeter
-  (4) Show shape with the largest area
-  (5) Show formulas
-  (0) Exit program
-~~~
-
-
-### Features
-As you can see the program has 5 features.
-
 #### 1. Add new shape
 This feature allows user to add new shape to shapes list. User should be able to choose what kind of shapes he/she wants to add. Then he/she should specify attributes that a given shape requires.
-
-#### 2. Show all shapes
-This feature should print table containing all shapes added to the list. Take a look at class `ShapeList`, method `getShapesTable()`
-
-#### 3. Show shape with the largest perimeter
-This feature prints shape with the largest perimeter from a list.  
-
-#### 4. Show shape with the largest area
-This feature prints shape with the largest area from a list.
 
 #### 5. Show formulas
 This feature should allow user to choose shape type and print it's formulas (perimeter, area).

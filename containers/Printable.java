@@ -1,11 +1,13 @@
 package geometry.containers;
 
+import geometry.shapes.Shape;
+
 public interface Printable {
 
     /**
      * Prints all fields in the enumerated list.
      */
-    public void printList();
+    public void printShape(String message, Shape shape);
     
     /**
      * Prints all fields in the table form.
