@@ -6,6 +6,7 @@ import geometry.shapes.Circle;
 import geometry.shapes.EquilateralTriangle;
 import geometry.shapes.Rectangle;
 import geometry.view.View;
+import java.util.InputMismatchException;
 
 public class Main {
     public static View myView;
@@ -23,9 +24,15 @@ public class Main {
         myShapeList.addShape(equilateralTriangle);
 
         myView.printMainMenu();
-	    while (isRunning) {
-	        int option = myView.getIntInput("Your choice: ");
-
+        int option = -1;
+        while (isRunning) {
+            
+            try {
+                option = myView.getIntInput("Your choice: ");
+            } catch (InputMismatchException e) {
+                myView.printMessage("There is no such option. Try again!");
+            }
+            
             switch (option) {
                 case 1:
                     // Add new shape
@@ -40,7 +47,9 @@ public class Main {
                     myShapeList.printShape("Shape with biggest perimeter:", myShapeList.getLargestShapeByArea());
                     break;
                 case 5:
-                    // Show formulas
+                    myView.printAvailableShapes();
+                    int shapeNumber = myView.getIntInput("Which shape do you choose? ");
+                    // gdzie dać metodę do dopasowania figury do cyfry z menu?
                     break;
                 case 0:
                     isRunning = false;

@@ -23,6 +23,15 @@ public class View {
         System.out.println(" ( 0 ) Exit program");
     }
 
+    public void printAvailableShapes() {
+        List<String> shapes = List.of("Circle", "Triangle", "Equilateral Triangle", "Rectangle", "Square", "Regular Pentagon");
+        System.out.println("\n Which formula do you want to know? ");
+        for (int i = 1; i <= shapes.size(); i++) {
+            System.out.println(" ( " + i + " ) " + shapes.get(i-1));
+        }
+    }
+
+    // dodać parametr int wyrzucający wyjątki gdy wyhcodzimy poza liczbę x
     public int getIntInput(String message) {
         System.out.println("\n" + " " + message);
         System.out.print(" ");
@@ -32,6 +41,13 @@ public class View {
         return input;
         // obsługa wyjątków gdy nie int
     }
+
+    public void printMessage(String message) {
+        System.out.println("\n " + message);
+    }
+
+
+    // dodać clear screan
 }
 
     
