@@ -1,4 +1,4 @@
-package geometry.shapes;
+package shapes;
 
 
 // import com.codecool.java.NotYetImplementedException;

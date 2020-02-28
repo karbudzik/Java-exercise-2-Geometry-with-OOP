@@ -1,10 +1,10 @@
-package geometry.containers;
+package containers;
 
 import java.util.ArrayList;
 import java.util.List;
-import geometry.shapes.Shape;
+import shapes.Shape;
 
-public class ShapeList implements Printable {
+public class ShapeList {
     private List<Shape> shapes;
     
     public ShapeList() {
@@ -49,7 +49,6 @@ public class ShapeList implements Printable {
             }
         }
         return biggestPerimeterShape;
-        // wyrzucić błąd gdy nie ma żadnych elementów
     }
 
     public Shape getLargestShapeByArea() {
@@ -61,18 +60,6 @@ public class ShapeList implements Printable {
             }
         }
         return biggestAreaShape;
-        // wyrzucić błąd gdy nie ma żadnych elementów
     }
-
-    public void printTable() {
-        System.out.println(" ".repeat(63) + "YOUR SHAPES: \n");
-        System.out.println(getShapesTable());
-    }
-
-    public void printShape(String message, Shape shape) {
-        System.out.printf(" %s", message);
-        System.out.printf(" %s, perimeter: %.3f, area: %.3f.", shape.toString(), shape.calculatePerimeter(), shape.calculateArea());
-        // obsługa braku shape'ów
-    } 
 
 }

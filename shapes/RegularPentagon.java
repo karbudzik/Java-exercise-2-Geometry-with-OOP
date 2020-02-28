@@ -1,4 +1,4 @@
-package geometry.shapes;
+package shapes;
 
 public class RegularPentagon extends Shape {
     private Float a;
