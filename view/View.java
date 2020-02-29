@@ -52,13 +52,18 @@ public class View {
         System.out.flush();  
     }
 
-    public int getIntInput(String message) {
+    public int getIntInput(String message) throws IllegalArgumentException { 
+        
         System.out.println("\n" + " " + message);
         System.out.print(" ");
 
         Scanner scannerFromUser = new Scanner(System.in);
         int input = scannerFromUser.nextInt();
         
+        if (input <= 0) {
+            throw new IllegalArgumentException("Shape's dimentions need to be bigger than 0!");
+        }
+
         return input;
     }
 
