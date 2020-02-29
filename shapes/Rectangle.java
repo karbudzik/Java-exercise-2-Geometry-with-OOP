@@ -4,7 +4,6 @@ public class Rectangle extends Shape {
 
     protected Float a;
     protected Float b;
-    protected String name;
     
     public Rectangle(float a, float b) {
         this.a = a;

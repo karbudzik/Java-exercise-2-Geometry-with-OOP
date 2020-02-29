@@ -2,7 +2,6 @@ package shapes;
 
 public class RegularPentagon extends Shape {
     private Float a;
-    private String name;
     
     public RegularPentagon(float a) {
         this.a = a;

@@ -4,7 +4,6 @@ public class Triangle extends Shape {
     protected Float a;
     protected Float b;
     protected Float c;
-    protected String name;
     
     public Triangle(float a, float b, float c) {
         this.a = a;

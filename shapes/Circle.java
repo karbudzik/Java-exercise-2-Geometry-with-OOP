@@ -3,7 +3,6 @@ package shapes;
 public class Circle extends Shape {
 
     private Float r;
-    private String name;
     
     public Circle(float r) {
         this.r = r;
